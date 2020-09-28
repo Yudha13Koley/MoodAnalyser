@@ -59,7 +59,7 @@ public class MoodAnalyserTest {
 			String mood = moodAnalyser.AnalyseMood();
 			Assert.assertEquals("Happy",mood);
 		} catch (InvalidMoodEx e) {
-		Assert.assertEquals("Enter A Valid Mood",e.getMessage());
+		Assert.assertEquals("Enter A Valid Mood !",e.getMessage());
 		}
 	}
 }
