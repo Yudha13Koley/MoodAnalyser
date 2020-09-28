@@ -13,8 +13,6 @@ public void setMessage(String message) {
 public String AnalyseMood() {
 		if(message.contains("Sad"))
 			return "Sad";
-		else if(message.contains("Happy"))
-			return "Happy";
 		else
 			return "Happy";
 		
