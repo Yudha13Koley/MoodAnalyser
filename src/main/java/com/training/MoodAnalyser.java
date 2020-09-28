@@ -10,11 +10,16 @@ public MoodAnalyser(String string) {
 public void setMessage(String message) {
 	this.message = message;
 }
-public String AnalyseMood() {
+public String AnalyseMood() throws InvalidMoodEx {
+		try {
 		if(message.contains("Sad"))
 			return "Sad";
 		else
 			return "Happy";
+		}
+		catch(Exception e){
+			throw new InvalidMoodEx("Enter A Valid Mood");
+		}
 		
 	}
 

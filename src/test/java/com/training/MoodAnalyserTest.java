@@ -10,29 +10,45 @@ public class MoodAnalyserTest {
 	public void WhenGivenHappy_ReturnsHappy() {
 		MoodAnalyser moodAnalyser=new MoodAnalyser();
 		moodAnalyser.setMessage("Happy");
-		String mood=moodAnalyser.AnalyseMood();
-		Assert.assertEquals("Happy",mood);
+		try {
+			String mood = moodAnalyser.AnalyseMood();
+			Assert.assertEquals("Happy",mood);
+		} catch (InvalidMoodEx e) {
+		Assert.assertEquals("Enter A Valid Mood",e.getMessage());
+		}
 	}
 //Sad
 	@Test
 	public void WhenGivenSad_ReturnsSad() {
 		MoodAnalyser moodAnalyser=new MoodAnalyser();
 		moodAnalyser.setMessage("Sad");
-		String mood=moodAnalyser.AnalyseMood();
-		Assert.assertEquals("Sad",mood);
+		try {
+			String mood = moodAnalyser.AnalyseMood();
+			Assert.assertEquals("Sad",mood);
+		} catch (InvalidMoodEx e) {
+		Assert.assertEquals("Enter A Valid Mood",e.getMessage());
+		}
 	}
 	@Test
 	public void WhenGivenSadMessage_ReturnsSad() {
 		MoodAnalyser moodAnalyser=new MoodAnalyser();
-		moodAnalyser.setMessage("I am in Sad mood");
-		String mood=moodAnalyser.AnalyseMood();
-		Assert.assertEquals("Sad",mood);
+		moodAnalyser.setMessage("I am in Sad Mood");
+		try {
+			String mood = moodAnalyser.AnalyseMood();
+			Assert.assertEquals("Sad",mood);
+		} catch (InvalidMoodEx e) {
+		Assert.assertEquals("Enter A Valid Mood",e.getMessage());
+		}
 	}
 	@Test
 	public void WhenGivenHappyMessage_ReturnsHappy() {
 		MoodAnalyser moodAnalyser=new MoodAnalyser();
-		moodAnalyser.setMessage("I am in Happy mood");
-		String mood=moodAnalyser.AnalyseMood();
-		Assert.assertEquals("Happy",mood);
+		moodAnalyser.setMessage("I am in Happy Mood");
+		try {
+			String mood = moodAnalyser.AnalyseMood();
+			Assert.assertEquals("Happy",mood);
+		} catch (InvalidMoodEx e) {
+		Assert.assertEquals("Enter A Valid Mood",e.getMessage());
+		}
 	}
 }
