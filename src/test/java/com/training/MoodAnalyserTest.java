@@ -19,5 +19,11 @@ public class MoodAnalyserTest {
 		String mood=moodAnalyser.AnalyseMood("Sad");
 		Assert.assertEquals("Sad",mood);
 	}
+	@Test
+	public void WhenGivenSadMessage_ReturnsSad() {
+		MoodAnalyser moodAnalyser=new MoodAnalyser();
+		String mood=moodAnalyser.AnalyseMood("I am in Sad mood !");
+		Assert.assertEquals("Sad",mood);
+	}
 				
 }
