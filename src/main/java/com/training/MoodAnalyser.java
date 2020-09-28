@@ -18,7 +18,7 @@ public String AnalyseMood() throws InvalidMoodEx {
 			return "Happy";
 		}
 		catch(Exception e){
-			throw new InvalidMoodEx("Enter A Valid Mood");
+			return "Happy";
 		}
 		
 	}
