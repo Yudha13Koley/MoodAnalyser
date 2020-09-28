@@ -1,7 +1,5 @@
 package com.training;
 
-import com.training.InvalidMoodEx.ExceptionType;
-
 public class MoodAnalyser {
 private String message;
 public MoodAnalyser() {
@@ -16,7 +14,7 @@ public String AnalyseMood() throws InvalidMoodEx {
 		try {
 		if(message.length()==0)
 			throw new InvalidMoodEx(InvalidMoodEx.ExceptionType.Entered_Empty, "Enter A Valid Mood !");
-		if(message.contains("Sad"))
+		else if(message.contains("Sad"))
 			return "Sad";
 		else
 			return "Happy";

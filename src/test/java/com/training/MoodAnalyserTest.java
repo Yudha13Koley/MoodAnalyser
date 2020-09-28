@@ -52,7 +52,7 @@ public class MoodAnalyserTest {
 		}
 	}
 	@Test
-	public void WhenGivenNullMessage_HandlesException_ReturnHappy() {
+	public void WhenGivenNullMessage_HandlesException_ReturnMessage() {
 		MoodAnalyser moodAnalyser=new MoodAnalyser();
 		moodAnalyser.setMessage(null);
 		try {
@@ -62,4 +62,17 @@ public class MoodAnalyserTest {
 		Assert.assertEquals("Enter A Valid Mood !",e.getMessage());
 		}
 	}
+	@Test
+	public void WhenGivenNullMessage_HandlesException_ReturnInvalidExType() {
+		MoodAnalyser moodAnalyser=new MoodAnalyser();
+		moodAnalyser.setMessage(null);
+		try {
+			String mood = moodAnalyser.AnalyseMood();
+			Assert.assertEquals("Happy",mood);
+		} catch (InvalidMoodEx e) {
+		Assert.assertEquals(InvalidMoodEx.ExceptionType.Entered_Null,e.type);
+		}
+	}
+	
+	
 }
