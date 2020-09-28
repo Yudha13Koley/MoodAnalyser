@@ -9,27 +9,23 @@ public class MoodAnalyserTest {
 	@Test
 	public void WhenGivenHappy_ReturnsHappy() {
 		MoodAnalyser moodAnalyser=new MoodAnalyser();
-		String mood=moodAnalyser.AnalyseMood("Happy");
+		moodAnalyser.setMessage("Happy");
+		String mood=moodAnalyser.AnalyseMood();
 		Assert.assertEquals("Happy",mood);
 	}
 //Sad
 	@Test
 	public void WhenGivenSad_ReturnsSad() {
 		MoodAnalyser moodAnalyser=new MoodAnalyser();
-		String mood=moodAnalyser.AnalyseMood("Sad");
+		moodAnalyser.setMessage("Sad");
+		String mood=moodAnalyser.AnalyseMood();
 		Assert.assertEquals("Sad",mood);
 	}
 	@Test
 	public void WhenGivenSadMessage_ReturnsSad() {
 		MoodAnalyser moodAnalyser=new MoodAnalyser();
-		String mood=moodAnalyser.AnalyseMood("I am in Sad mood !");
+		moodAnalyser.setMessage("I am in Sad mood");
+		String mood=moodAnalyser.AnalyseMood();
 		Assert.assertEquals("Sad",mood);
-	}
-	@Test
-	public void WhenGivenAnyMessage_ReturnsHappy() {
-		MoodAnalyser moodAnalyser=new MoodAnalyser();
-		String mood=moodAnalyser.AnalyseMood("I am in Any mood !");
-		Assert.assertEquals("Happy",mood);
-	}
-				
+	}				
 }
