@@ -1,13 +1,23 @@
 package com.training;
 
-import static org.junit.Assert.*;
-
+import org.junit.Assert;
 import org.junit.Test;
 
-public class MoodAnalyserTest {
 
+public class MoodAnalyserTest {
+//Happy
 	@Test
-	public void moodAnalyserTest() {
-		
-}
+	public void WhenGivenHappy_ReturnsHappy() {
+		MoodAnalyser moodAnalyser=new MoodAnalyser();
+		String mood=moodAnalyser.AnalyseMood("Happy");
+		Assert.assertEquals("Happy",mood);
+	}
+//Sad
+	@Test
+	public void WhenGivenSad_ReturnsSad() {
+		MoodAnalyser moodAnalyser=new MoodAnalyser();
+		String mood=moodAnalyser.AnalyseMood("Sad");
+		Assert.assertEquals("Sad",mood);
+	}
+				
 }
